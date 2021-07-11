@@ -1,0 +1,70 @@
+<!doctype HTML>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+		<script src="https://raw.githack.com/jeromeetienne/AR.js/master/aframe/build/aframe-ar.min.js"></script>
+		<script src="https://raw.githack.com/donmccurdy/aframe-extras/master/dist/aframe-extras.loaders.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.0/howler.js" integrity="sha512-ZwRMM/apuAKDgOzzCM37VgAiaXCdI6DPMNAsHOLLH85vD6SAR0ROUb8TxecaMmt4e6KDFB3kpQxSBCMxAt12og==" crossorigin="anonymous"></script>
+	</head>
+
+	<body style="margin: 0; overflow: hidden;">
+
+	</body>
+
+	<script>
+		var piano = new Howl({
+			src: ['./audio/piano.mp3']
+		});
+
+		var drums = new Howl({
+			src: ['./audio/drums.mp3']
+		});
+
+		var guitar = new Howl({
+			src: ['./audio/guitar.mp3']
+		});
+
+		var mic = new Howl({
+			src: ['./audio/mic.mp3']
+		});
+
+		mic.play();
+		drums.play();
+		piano.play();
+		guitar.play();
+
+		function removeDrums() {
+			drums.mute(true);
+		}
+
+		function addDrums() {
+			drums.mute(false);
+		}
+
+		function removeMic() {
+			mic.mute(true);
+		}
+
+		function addMic() {
+			mic.mute(false);
+		}
+
+		function removeGuitar() {
+			guitar.mute(true);
+		}
+
+		function addGuitar() {
+			guitar.mute(false);
+		}
+
+		function removePiano() {
+			piano.mute(true);
+		}
+
+		function addPiano() {
+			piano.mute(false);
+		}
+
+	</script>
+</html>
